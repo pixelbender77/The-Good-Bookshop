@@ -36,12 +36,13 @@
     if ( ! $stmt->prepare($sql)) {
         die("SQL error: " . $mysqli->error);
     }
-
-    $stmt->bind_param("sssb",
+    $is_admin = false;
+    $stmt->bind_param("ssss",
                     $_POST["name"],
                     $_POST["email"],
                     $password_hash,
-                    false);
+                    $is_admin);
+    // notice 'ssss' is used because bind_param treats references and so we are passing the reference of the four variables (including the boolean) , and references are strings. the real assignment is done during execution. thanks
                     
     if ($stmt->execute()) {
         header("Location: signup-success.html");
