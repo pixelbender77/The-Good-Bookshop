@@ -27,6 +27,7 @@
     <?php if (isset($user)): ?>
         
         <p>Hello <?= htmlspecialchars($user["name"]) ?></p>
+        <div><a href="view-profile.php?id=<?php echo $user["id"]; ?>">Profile</a><div>
         
         <p><a href="logout.php">Log out</a></p>
         
