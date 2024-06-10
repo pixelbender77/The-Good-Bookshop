@@ -47,12 +47,15 @@
             $name = htmlspecialchars($row["name"]);
             $email = htmlspecialchars($row["email"]);
             ?>
-            <a class="btn btn-info mb-4" href="edit-profile.php?id=<?php echo $id; ?>"><i class="fas fa-edit"></i> Edit Profile</a>
+            <a class="btn btn-info mb-4" href="edit-profile.php?id=<?php echo $id; ?>" style="background-color:var(--ACCENT); border:none;"><i class="fas fa-edit"></i> Edit Profile</a>
             <div class="profile">
                 <img src="assets/profile.png" alt="Profile Image">
                 <h3><?php echo $name; ?></h3>
                 <h4><?php echo $email; ?></h4>
+                <p><a href="logout.php">Log out</a></p>
+            
             </div>
+            
             <?php
         } else {
             echo "<p class='text-danger'>User not found.</p>";

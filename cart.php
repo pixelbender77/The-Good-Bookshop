@@ -73,8 +73,7 @@ $result = mysqli_query($mysqli, $sqlSelect);
                         <div class="cart-item-info">
                             <h4><?php echo $item['title']; ?></h4>
                             <p><?php echo $item['price']; ?> FCFA</p>
-                            <a href="#" class='view-link to-end'>Place Order</a>
-
+                            <a href="place-order.php?user_id=<?php echo $user_id ?>&cart_item_id=<?php echo $item['id']?>" class='view-link to-end'>Place Order</a>
                         </div>
                         <div class="cart-item-actions">
                             <button class="btn btn-outline-secondary decrease-qty"><i class="fas fa-minus"></i></button>

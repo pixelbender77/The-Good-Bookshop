@@ -17,6 +17,11 @@
     font-size: 1.5rem;
     color: gray;
 }
+.accent{
+    width: 500px;
+    border-radius: 50px;
+    background-color: var(--ACCENT) !important;
+}
 
 .cover-detail {
     display: flex;
@@ -158,7 +163,7 @@
     color: var(--ACCENT);
 }
 
-//Top section with search bar
+/*Top section with search bar*/
 .do-not-delete {}
 
 .top-section {
