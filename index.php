@@ -111,7 +111,7 @@ if (isset($_SESSION["user_id"])) {
             </div>
         </div>
         <div class="text-center p-3 bg-dark text-white">
-            © 2023 MyBookStore. All rights reserved.
+            © 2023 Esther's Shelf. All rights reserved.
         </div>
     </footer>
 
