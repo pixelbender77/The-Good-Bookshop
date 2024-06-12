@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+<?php include 'header.php'; ?>
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
             <h1>Book Detail</h1>
@@ -69,9 +70,8 @@
                 echo "<h3>No books found</h3>";
             }
             ?>
-           
-            
         </div>
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

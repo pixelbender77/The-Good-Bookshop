@@ -1,25 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
-    exit();
-}
-
-include('database.php');
-
-// Retrieve the logged-in user's orders
-$user_id = intval($_SESSION["user_id"]);
-$sqlSelect = "SELECT o.id, o.shipping_address, o.payment_method, o.status, o.city, o.country, o.card_info, b.title, b.author, b.price
-              FROM orders o
-              JOIN cart_items c ON o.cart_item_id = c.id
-              JOIN books b ON c.book_id = b.id
-              WHERE o.user_id = $user_id";
-
-$result = mysqli_query($mysqli, $sqlSelect);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +16,22 @@ $result = mysqli_query($mysqli, $sqlSelect);
     </style>
 </head>
 <body>
+    <?php include 'header.php';  //including the header(which starts session)
+        if (!isset($_SESSION["user_id"])) {
+            header("Location: login.php");
+            exit();
+        }
+        include('database.php');
+        // Retrieve the logged-in user's orders
+        $user_id = intval($_SESSION["user_id"]);
+        $sqlSelect = "SELECT o.id, o.shipping_address, o.payment_method, o.status, o.city, o.country, o.card_info, b.title, b.author, b.price
+                    FROM orders o
+                    JOIN cart_items c ON o.cart_item_id = c.id
+                    JOIN books b ON c.book_id = b.id
+                    WHERE o.user_id = $user_id";
+        $result = mysqli_query($mysqli, $sqlSelect); #fetching data to be displyed on page
+    ?>
+
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
             <h1>My Orders</h1>
@@ -95,5 +89,6 @@ $result = mysqli_query($mysqli, $sqlSelect);
             </tbody>
         </table>
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

@@ -10,6 +10,40 @@
     --MAIN-BLUE: #1E65E9;
 }
 
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding-top: 300px !important; /* Navbar height and more */
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: orangered;
+}
+html{
+    min-height: 100vh;
+
+}
+
+.container {
+    flex: 1;
+    min-height: 100vh;
+}
+.fill-page{
+    min-height: 100vh;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Other existing styles */
+
 .not-found {
     position: absolute;
     left: 40%;
@@ -17,7 +51,8 @@
     font-size: 1.5rem;
     color: gray;
 }
-.accent{
+
+.accent {
     width: 500px;
     border-radius: 50px;
     background-color: var(--ACCENT) !important;
@@ -38,7 +73,6 @@
     object-fit: cover;
     border-radius: 3px;
 }
-
 
 /*Profile*/
 
@@ -66,7 +100,6 @@
     margin-bottom: 20px;
 }
 
-
 /*Book=================*/
 
 .book-card {
@@ -92,7 +125,7 @@
     height: 90%;
     width: 200px;
     flex: 1;
-    background-color: red;
+    background-color: var(--ACCENT);
 }
 
 .card-image img {
@@ -110,10 +143,12 @@
     flex: 2;
     margin-left: 15px;
 }
-.card-title{
+
+.card-title {
     font-weight: bold;
     font-size: 2rem;
 }
+
 .card-desc {
     color: gray;
     font-size: 0.9rem;
@@ -164,7 +199,6 @@
 }
 
 /*Top section with search bar*/
-.do-not-delete {}
 
 .top-section {
     display: flex;
@@ -206,6 +240,7 @@
 }
 
 /*Placing Orders*/
-.to-end{
+
+.to-end {
     align-self: self-end;
 }

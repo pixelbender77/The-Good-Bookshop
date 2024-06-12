@@ -1,22 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
-    exit();
-}
-
-include('database.php');
-
-// Fetch user ID from session
-$user_id = $_SESSION["user_id"];
-
-// Fetch cart items for the user
-$sqlSelect = "SELECT cart_items.*, books.title, books.price, books.cover 
-              FROM cart_items 
-              JOIN books ON cart_items.book_id = books.id 
-              WHERE cart_items.user_id = $user_id";
-$result = mysqli_query($mysqli, $sqlSelect);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +42,23 @@ $result = mysqli_query($mysqli, $sqlSelect);
     </style>
 </head>
 <body>
+    <?php include 'header.php'; //Includind header
+        
+    if (!isset($_SESSION["user_id"])) {
+        header("Location: login.php");
+        exit();
+    }
+    include('database.php');
+    // Fetch user ID from session
+    $user_id = $_SESSION["user_id"];
+    // Fetch cart items for the user
+    $sqlSelect = "SELECT cart_items.*, books.title, books.price, books.cover 
+                FROM cart_items 
+                JOIN books ON cart_items.book_id = books.id 
+                WHERE cart_items.user_id = $user_id";
+    $result = mysqli_query($mysqli, $sqlSelect); // making the fetch for display
+?>
+
     <div class="container cart-container">
         <h1>Shopping Cart</h1>
         <?php if (mysqli_num_rows($result) > 0): ?>
@@ -88,6 +86,7 @@ $result = mysqli_query($mysqli, $sqlSelect);
             <p class="text-center">Your cart is empty.</p>
         <?php endif; ?>
     </div>
+    <?php include 'footer.php'; ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cartItems = document.querySelectorAll('.cart-item');

@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+    <?php include 'header.php'; ?>
     <div class="container mt-5">
         <a href="index.php" class="btn btn-secondary btn-back"><i class="fas fa-arrow-left"></i> Back</a>
     
@@ -65,5 +66,6 @@
     }
     ?>
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

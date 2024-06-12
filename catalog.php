@@ -11,6 +11,7 @@
     
 </head>
 <body>
+    <?php include 'header.php'; ?>
     <div class="container">
         <div class='top-section'>
             <h1>Catalog</h1>
@@ -70,6 +71,7 @@
             xhr.send();
         });
     </script>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
 

@@ -19,6 +19,8 @@
     </style>
 </head>
 <body>
+    
+    <?php include 'header.php'; ?>
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
             <h1>Dashboard</h1>
@@ -28,7 +30,6 @@
         </header>
 
         <?php
-        session_start();
         if (isset($_SESSION["create"])) {
             echo '<div class="alert alert-success">' . $_SESSION["create"] . '</div>';
             unset($_SESSION["create"]);
@@ -127,6 +128,8 @@
             </table>
         
     </div>
+    <?php include 'footer.php'; ?>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2IWO6Io5RkycJ2mLNIGeLZ6I2FQnmWgtiJEHcNf5Wq6p6YfRvH+zB5f8GDr" crossorigin="anonymous"></script>
 </body>
