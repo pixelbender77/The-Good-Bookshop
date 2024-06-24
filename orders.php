@@ -34,8 +34,8 @@
 
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
-            <h1>My Orders</h1>
-            <a href="catalog.php" class="view-link">Back to Catalog</a>
+            <h1>Orders</h1>
+            <a href="catalog.php" class="view-link" style="transform: translateX(-230px); background-color: transparent; color: black; border: 1px solid black;">Back</a>
         </header>
         
         <?php if (isset($_SESSION["order_success"])): ?>
@@ -56,8 +56,8 @@
             </div>
         <?php endif; ?>
         
-        <table class="table table-bordered order-table">
-            <thead>
+        <table class="table  order-table" style="margin-top: 100px; background-color: #E5F1FB;">
+            <thead style="background-color: gray;">
                 <tr>
                     <th>Order ID</th>
                     <th>Book Title</th>

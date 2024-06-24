@@ -2,12 +2,18 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
     --BG: #E4E4E4;
-    --ACCENT: #AA6688;
+    /*--ACCENT: #3DF3AF;*/
+    --ACCENT: #534741;
     --MAIN-BLUE: #1E65E9;
+    --MAIN-DARK: #333333;
+    --GRAY-TEXT: #BFBFBF;
+    --STRANGE-WHITE: #E7CCC3;
+    --CLEAR-BROWN: #C7B299;
 }
 
 body {
@@ -17,20 +23,9 @@ body {
     flex-direction: column;
 }
 
-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: orangered;
-}
-
-html {
-    min-height: 100vh;
-}
-
 .container {
     flex: 1;
-    min-height: 100vh;
+    min-height: 45vh;
 }
 
 .fill-page {
@@ -103,29 +98,30 @@ footer {
 
 
 /*Book=================*/
+#book-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
 .book-card {
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     background-color: #e7e7e7;
-    width: 80%;
-    height: 200px;
+    width: 35%;
+    min-height: 200px;
     padding: 10px;
     margin-bottom: 30px;
     border-radius: 3px;
-}
-
-@media screen and (max-width: 766px) {
-    .book-card {
-        flex-direction: column;
-    }
 }
 
 .card-image {
     display: flex;
     align-items: center;
     height: 90%;
-    width: 200px;
+    width: 300px;
     flex: 1;
     background-color: var(--ACCENT);
 }
@@ -184,7 +180,6 @@ footer {
     transition: all 0.1s ease-in-out;
     height: fit-content;
     width: fit-content;
-    border-radius: 3px;
     color: whitesmoke;
     padding: 5px;
     padding-left: 10px;
@@ -210,6 +205,7 @@ footer {
 }
 
 .search-container {
+    transform: translateY(30px);
     width: 300px;
     position: relative;
 }
@@ -218,7 +214,7 @@ footer {
     width: 100%;
     padding: 10px 40px 10px 15px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 50px;
     transition: border-color 0.3s ease-in-out;
 }
 
@@ -230,7 +226,7 @@ footer {
 .search-icon {
     position: absolute;
     right: 15px;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
     color: #ccc;
     pointer-events: none;
@@ -247,4 +243,105 @@ footer {
 
 .to-end {
     align-self: self-end;
+}
+
+
+/*================The Good Bookshop Styles ================*/
+
+
+/*utilities*/
+
+.link-button:any-link {
+    display: inline-block;
+    background-color: white;
+    color: var(--MAIN-DARK);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.link-button:hover {
+    background-color: var(--ACCENT);
+    color: var(--BG);
+}
+
+.my-container {}
+
+
+/*image text elements  ------------*/
+
+.image-text-element {
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-text-element p {
+    color: gray;
+    font-size: 1.2rem;
+}
+
+.image-text-element .text-section {
+    flex: 2;
+}
+
+.image-text-element .image-section {
+    width: 200px;
+    height: auto;
+    margin-right: 50px;
+}
+
+.image-text-element .image-section img {
+    width: 100%;
+    height: auto;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+
+/*hero section  ------------*/
+
+.hero {
+    background-color: var(--MAIN-DARK);
+    color: var(--GRAY-TEXT);
+    padding-top: 100px;
+    padding-bottom: 60px;
+    margin-bottom: 100px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    /*Used for scroll down icon*/
+}
+
+.hero-img-section {
+    flex: 1.1;
+}
+
+.scroll-down-icon {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473);
+    /* Soft drop shadow */
+    background-color: white;
+    color: var(--MAIN-DARK);
+    transition: all 0.3s ease-in-out;
+}
+
+.scroll-down-icon:hover {
+    background-color: var(--ACCENT);
+    color: white;
+}
+
+.s-icon:hover{
+    color: black
 }

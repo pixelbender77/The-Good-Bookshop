@@ -60,11 +60,12 @@
 ?>
 
     <div class="container cart-container">
-        <h1>Shopping Cart</h1>
         <?php if (mysqli_num_rows($result) > 0): ?>
             <div class="cart-items">
                 <?php while ($item = mysqli_fetch_assoc($result)): ?>
-                    <div class="cart-item" data-book-id="<?php echo $item['book_id']; ?>">
+    
+
+                    <div class="cart-item" data-book-id="<?php echo $item['book_id']; ?>" style="padding:40px; background-color: white; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473); border-radius: 5px; ">
                         <div class="cart-item-image">
                             <img src="covers/<?php echo $item['cover']; ?>" alt="<?php echo $item['title']; ?>">
                         </div>
@@ -74,10 +75,10 @@
                             <a href="place-order.php?user_id=<?php echo $user_id ?>&cart_item_id=<?php echo $item['id']?>" class='view-link to-end'>Place Order</a>
                         </div>
                         <div class="cart-item-actions">
-                            <button class="btn btn-outline-secondary decrease-qty"><i class="fas fa-minus"></i></button>
-                            <input type="number" name="quantity" value="<?php echo $item['qty']; ?>" min="1" readonly>
-                            <button class="btn btn-outline-secondary increase-qty"><i class="fas fa-plus"></i></button>
-                            <button class="btn btn-danger remove-item"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-outline-secondary decrease-qty" style="border-radius: 50%; background-color: gray; color: white;"><i class="fas fa-minus"></i></button>
+                            <input type="number" name="quantity" value="<?php echo $item['qty']; ?>" min="1" style="border:none; background-color: #E5F1FB;" readonly>
+                            <button class="btn btn-outline-secondary increase-qty" style="border-radius: 50%; background-color: gray; color: white;"><i class="fas fa-plus"></i></button>
+                            <button class="btn btn-danger remove-item" style="background-color: transparent; color: black; border: none;"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 <?php endwhile; ?>

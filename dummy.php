@@ -1,4 +1,44 @@
-
+<div class="my-header" >
+                <?php if (isset($user)): ?>
+                <!-- user profile icon -->
+                <a class="navbar-profil" href="view-profile.php?id=<?= $user["id"]; ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <!-- print login or sign up if user is not logged in -->
+                <?php else: ?>
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign up</a>
+                    </li>
+                </ul>
+            <?php endif; ?>
+            <a class="navbar-logo" href="index.php"><img src="assets/logo_brown.png" style="width: 100px; height: auto; "></a>
+            
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+            
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.php">Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="orders.php">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php">Cart</a>
+                </li>
+                <?php if (isset($user) && $user["is_admin"]): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">Admin</a>
+                </li>
+                <?php endif; ?>
+            </ul>
+    
+        </div>
 <!-- 
 <!DOCTYPE html>
 <html lang="en">

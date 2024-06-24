@@ -18,32 +18,50 @@ if (isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
-    <style>
-        body {
-            padding-top: 100px; /* Navbar height and more */
-        }
-    </style>
+    
 </head>
 <body >
     <?php include 'header.php'; ?>
     
-    <div class="container mt-4 fill-page">
+    <div class="my-container"  >
         <?php if (isset($user)): ?>
-            <!-- <h4 style="margin-top: 40px;">Welcome <?= htmlspecialchars($user["name"]) ?>!</h4> -->
-            <div class="d-flex justify-content-center align-items-center" style="margin-top: 80px;">
-                <div style="width: 200px; height:auto; margin-right: 50px;">
-                    <img src="assets/logo.png" style="width: 100%; height:auto;">
+            <h4 style="margin-top: 40px;">Welcome <?= htmlspecialchars($user["name"]) ?>!</h4>
+        <?php endif; ?> 
+            <!-- HERO SECTION -->
+            <div class="image-text-element hero" >
+                <div class="image-section hero-img-section">
+                    <img  src="assets/illustration_1.png">
                 </div>
-                <div style="flex:2;">
-                    <h3>Our books answer your questions.</h3>
-                    <p style="color: gray; font-size: 1.2rem;">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati atque perspiciatis praesentium molestias eius sapiente veniam, sit vero nobis eligendi debitis, assumenda pariatur sapiente veniam, sit vero nobis eligendi debitis, assumenda pariatur dolores enim in iusto dolores enim in iusto quo quas aperiam! Visit our <a style="color: var(--ACCENT);" href="catalog.php">Catalog</a>
-                    </p>
+                <div class="text-section">
+                    <h3>The Books you need</h3>
+                    <p> Transform your life with our off-the-shelf books. We have the books you need, just that. Discover their large varieties. Browse our catalogue , search books , get books by genre and add them to your cart.</p>
+                    <a href="catalog.php" class="link-button">CATALOG</a>
+                </div>
+                <a id="skip-hero"  href="#skip-hero" class="scroll-down-icon"><i class="fas fa-arrow-down"></i></a>
+            </div>
+            <!-- ABOUT -->
+
+            <div class="image-text-element row-reverse">
+                <div class="image-section">
+                    <img src="assets/book_animation.gif">
+                </div>
+                <div class="text-section">
+                    <h3 >Welcome onboard!</h3>
+                    <p> Welcome to The Good BookShop, your one-stop shop for all the books you'll ever need! Whether you're a seasoned bibliophile or just starting your literary journey, we have something to spark your imagination and keep you turning pages.</p>
                 </div>
             </div>
-        <?php else: ?>
-            <p><a href="login.php">Log in</a> or <a href="signup.html">Sign up</a></p>
-        <?php endif; ?>
+            <hr>
+            
+            <div class="image-text-element">
+                <div class="image-section">
+                    <img src="assets/animation_2.gif">
+                </div>
+                <div class="text-section">
+                    <h3>Discover our off the shelf books</h3>
+                    <p>Transform your life with our off-the-shelf books. We have the books you need, just that. Discover their large varieties. Browse our catalogue , search books , get books by genre and add them to your cart<a style="color: var(--ACCENT);" href="catalog.php">Catalog</a></p>
+                </div>
+            </div>
+            
     </div> 
     <?php include 'footer.php'; ?>
 

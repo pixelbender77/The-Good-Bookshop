@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
     <title>Admin | Dashboard</title>
     <style>
         table td, table th {
@@ -23,9 +25,9 @@
     <?php include 'header.php'; ?>
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
-            <h1>Dashboard</h1>
+            <h1 style="color: var(--ACCENT);">Admin dashboard</h1>
             <div>
-                <a href="create.php" class="btn btn-secondary"><i class="fas fa-plus-circle"></i> Add a Book</a>
+                <a href="create.php" class="btn btn-secondary" style="transform: translateX(-230px); background-color:var(--ACCENT)"><i class="fas fa-plus-circle"></i> Add a Book</a>
             </div>
         </header>
 
@@ -47,8 +49,8 @@
             <h2 style="color:gray">Books</h2>
 
             <div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books-tab">
-                <table class="table table-bordered table-striped mt-4">
-                    <thead class="table-dark">
+                <table class="table table-bordered table-striped mt-4" style=" box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473);">
+                    <thead class="table-clear" style="border-radius: 100px;">
                         <tr>
                             <th>#</th>
                             <th>Title</th>
@@ -70,9 +72,9 @@
                             <td><?php echo $data['author']; ?></td>
                             <td><?php echo $data['price']; ?> FCFA</td>
                             <td>
-                                <a href="view.php?id=<?php echo $data['id']; ?>" class="btn"><i class="fas fa-eye"></i></a>
-                                <a href="edit.php?id=<?php echo $data['id']; ?>" class="btn"><i class="fas fa-edit"></i></a>
-                                <a href="delete.php?id=<?php echo $data['id']; ?>" class="btn"><i class="fas fa-trash"></i></a>
+                                <a href="view.php?id=<?php echo $data['id']; ?>" class="btn s-icon" style="color: gray; display: inline-block; padding: 10px; background-color: white;  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473); "><i class="fas fa-eye s-icon"></i></a>
+                                <a href="edit.php?id=<?php echo $data['id']; ?>" class="btn s-icon"  style="color: gray;display: inline-block; padding: 10px; background-color: white;  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473);"><i class="fas fa-edit s-icon"></i></a>
+                                <a href="delete.php?id=<?php echo $data['id']; ?>" class="btn s-icon"  style="color: gray; display: inline-block; padding: 10px; background-color: white; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473);"><i class="fas fa-trash s-icon"></i></a>
                             </td>
                         </tr>
                         <?php } ?>
@@ -81,8 +83,8 @@
             </div>
             <h2 style="color:gray">Orders</h2>
             <!-- Orders Section -->
-            <table class="table table-bordered table-striped mt-4">
-                <thead class="table-dark">
+            <table class="table table-bordered table-striped mt-4" style=" box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473);">
+                <thead class="table-clear">
                     <tr>
                         <th>Order ID</th>
                         <th>User ID</th>
@@ -120,13 +122,13 @@
                     <?php } ?>
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <th colspan="5" class="text-end">Total Amount:</th>
-                        <th colspan="4"><?php echo $totalAmount; ?> FCFA</th>
-                    </tr>
+                    
                 </tfoot>
             </table>
-        
+            <ul>
+                        <li>Total Amount:</li>
+                        <li ><?php echo $totalAmount; ?> FCFA</li>
+                    </ul>
     </div>
     <?php include 'footer.php'; ?>
 

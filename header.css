@@ -1,0 +1,122 @@
+
+:root {
+    --BG: #E4E4E4;
+    /*--ACCENT: #3DF3AF;*/
+    --ACCENT: #534741;
+    --MAIN-BLUE: #1E65E9;
+    --MAIN-DARK: #333333;
+    --GRAY-TEXT: #BFBFBF;
+    --STRANGE-WHITE: #E7CCC3;
+    --CLEAR-BROWN: #C7B299;
+}
+
+header {
+    transform: translateY(-56px);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 80px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+
+
+#scroll-watcher {
+    width: 0;
+    height: 5px;
+    background-color: var(--ACCENT);
+    animation: follow-scroll;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    scale: 0 1;
+    z-index: 1000;
+    /*should be above all other elements*/
+    transform-origin: left;
+    animation: follow-scroll linear;
+    animation-timeline: scroll(y);
+}
+
+@keyframes follow-scroll {
+    to {
+        scale: 1 1;
+    }
+}
+
+
+#navbar {
+    width: 100%;
+    font-family:  serif;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    transform: translateY(8px);
+}
+
+.nav-links>li>a:any-link {
+    color: var(--MAIN-DARK);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.nav-links>li>a:hover,
+.nav-links>li>a:focus {
+    color: var(--CLEAR-BROWN);
+    
+}
+
+/*Navbar Profile*/
+.navbar-profil{
+    flex: 1;
+    color: var(--ACCENT);
+    font-size: 2.1rem;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-profil:hover{
+    color: var(--MAIN-DARK);
+    transform: scale(1.01);rgba(0, 0, 0, 0.26)
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.473); 
+}
+
+/*Navbar logo*/
+.navbar-logo{
+    flex: 1;
+}
+.navbar-logo img{
+    transform: translateX(60px);
+    align-self: center;
+    width: 130px;
+    height: auto; 
+}
+
+/*Navbar links*/
+.nav-links{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;   
+}
+
+.nav-items{
+    margin-left: 10px !important;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    width: 30%;
+}
+
+.nav-link:hover{
+    color: var(--CLEAR-BROWN);
+}

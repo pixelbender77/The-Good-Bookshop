@@ -11,10 +11,15 @@
     
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <?php include 'header.php'; 
+        if (!isset($_SESSION["user_id"])) {
+            header("Location: login.php");
+            exit();
+        }
+    ?>
     <div class="container">
         <div class='top-section'>
-            <h1>Catalog</h1>
+            <h1>Your Catalog</h1>
             <div class="search-container position-relative">
                 <input id="search-bar" class="form-control search-bar" type="text" name="q" placeholder="Search..">
                 <i class="fas fa-search search-icon"></i>

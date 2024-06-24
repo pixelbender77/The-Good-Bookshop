@@ -6,7 +6,7 @@ $sql = "DELETE FROM books WHERE id='$id'";
 if(mysqli_query($mysqli,$sql)){
     session_start();
     $_SESSION["delete"] = "Book Deleted Successfully!";
-    header("Location:index.php");
+    header("Location:dashboard.php");
 }else{
     die("Something went wrong");
 }

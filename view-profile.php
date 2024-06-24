@@ -8,24 +8,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .profile {
-            text-align: center;
-            margin-top: 30px;
+        body {
+            background-color: #E4E4E4;
         }
-        .profile img {
+        .profile-card {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            top: 50px;
+        }
+        .profile-card img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
         }
-        .profile h3 {
+        .profile-card h3 {
             margin-bottom: 10px;
+            color: #534741;
         }
-        .profile h4 {
+        .profile-card h4 {
             color: gray;
+            margin-bottom: 20px;
         }
         .btn-back {
-            margin-bottom: 20px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #534741;
+            color: #fff;
+        }
+        .btn-edit {
+            background-color: #534741;
+            border: none;
+        }
+        .btn-edit:hover {
+            background-color: #C7B299;
+        }
+        .logout-link {
+            color: #534741;
+            text-decoration: none;
+        }
+        .logout-link:hover {
+            color: #C7B299;
         }
     </style>
 </head>
@@ -48,15 +78,13 @@
             $name = htmlspecialchars($row["name"]);
             $email = htmlspecialchars($row["email"]);
             ?>
-            <a class="btn btn-info mb-4" href="edit-profile.php?id=<?php echo $id; ?>" style="background-color:var(--ACCENT); border:none;"><i class="fas fa-edit"></i> Edit Profile</a>
-            <div class="profile">
-                <img src="assets/profile.png" alt="Profile Image">
+            <div class="profile-card mt-5">
+                <img src="assets/profile.png" alt="Profile Image" class="img-thumbnail">
                 <h3><?php echo $name; ?></h3>
                 <h4><?php echo $email; ?></h4>
-                <p><a href="logout.php">Log out</a></p>
-            
+                <a href="edit-profile.php?id=<?php echo $id; ?>" class="btn btn-info btn-edit mb-4"><i class="fas fa-edit"></i> Edit Profile</a>
+                <p><a href="logout.php" class="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></p>
             </div>
-            
             <?php
         } else {
             echo "<p class='text-danger'>User not found.</p>";

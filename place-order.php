@@ -53,7 +53,7 @@ if ($cart_item_id == 0) {
     </style>
 </head>
 <body>
-    <a href="cart.php?id=<?php echo $user_id ?>" class="btn btn-secondary btn-back" style="position: absolute; left: 100px; top: 50px; width: 100px;"><i class="fas fa-arrow-left"></i> Back</a>
+    <a href="cart.php?id=<?php echo $user_id ?>" class="btn btn-secondary btn-back" style="position: absolute; left: 100px; top: 50px; width: 100px; background-color: transparent; color: black;"><i class="fas fa-arrow-left" style="color: black;"></i> Back</a>
 
     <div class="container order-form">
         <h2>Place Your Order</h2>
@@ -90,7 +90,7 @@ if ($cart_item_id == 0) {
                 <input type="text" class="form-control" id="card_info" name="card_info" placeholder="Card Number" required>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="background-color: #AA6688; color: white; border:none;">Place Order</button>
+            <button type="submit" class="btn btn-primary" style="background-color:var(--ACCENT); color: white; border:none; width: 30%;">Place Order</button>
         </form>
     </div>
 </body>

@@ -4,39 +4,131 @@
 <head>
     <title>Signup</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <!-- Just Validate is a javascript helper script for auto form validation -->
     <script src="/js/validation.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{
+            background-color: var(--BG);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            min-height: 500px;
+            background-color: transparent;
+            min-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            align-self: center;
+            margin: 50px 0;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+            margin-top: 25px;
+        }
+
+        .title {
+            color: var(--MAIN-DARK);
+            font-family: serif;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* background-color: aqua; */
+        }
+
+        .form input {
+            min-width: 300px;
+            min-height: 50px;
+            padding: 10px;
+            padding-left: 20px;
+            border: none;
+            border-bottom: 2px solid var(--ACCENT);
+            outline: none;
+            background-color: tranparent;
+            transition: all 0.4s ease-in;
+        }
+
+        .form input:focus-visible {
+            background-color: transparent;
+            border-bottom: 3px solid var(--ACCENT);
+            
+        }
+
+        .link:any-link {
+            color: var(--main-green);
+            transition: all 0.3s ease-in;
+        }
+
+        .link:hover {
+            letter-spacing: 1px;
+            color: rgb(55, 178, 226);
+        }
+
+        .options {
+            color: var(--title-gray);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            min-width: 80px;
+            align-self: end;
+            border-radius: 20px;
+            border: none;
+            padding: 10px;
+            background-color: white;
+            /* This black color is just a fallback. Notice that in normal circumstances this black color will not be seen. Instead depending on the type of Item, a corresponding color will be attributed*/
+            color: var(--ACCENT);
+            align-self: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            transition: all 0.1s ease-in;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .button:hover {
+            background-color: var(--ACCENT);
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
+    <img class="logo" src="assets/logo_brown.png" alt='The Good BookShop Logo'/>
 
-    <h1>Signup</h1>
+    <div class="container">
+        <h1 class="title">SIGNUP</h1>
 
-    <form action="process-signup.php" method="POST" id="signup">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-        </div>
+        <form class="form" action="process-signup.php" method="POST" id="signup">
+            <input type="text" id="name" name="name" placeholder="Username">
+            <input type="email" id="email" name="email" placeholder="Email address">
+            <input type="password" id="password" name="password" placeholder="password">
+            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm password">
+            <button class="button"> Signup </button>
+        </form>
+        <section class="options">
+            <p>Already have an account? <a class="link" href="login.php">Login</a></p>
+        </section>  
+    </div>
 
-        <div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email">
-        </div>
-
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-        </div>
-
-        <div>
-            <label for="password_confirmation">Repeat password</label>
-            <input type="password" id="password_confirmation" name="password_confirmation">
-        </div>
-
-        <button>Sign up</button>
-    </form>
 
 </body>
 
